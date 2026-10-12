@@ -115,7 +115,7 @@ export async function fetchMediaDetails(imageIds: number[]) {
     const response = await fetch(
       `https://wordpress.arlenespools.co.za/wp-json/wp/v2/media?include=${imageIds.join(
         ","
-      )}`,
+      )}&per_page=100`,
       {
         headers: {
           Authorization: `Basic ${authToken}`,
