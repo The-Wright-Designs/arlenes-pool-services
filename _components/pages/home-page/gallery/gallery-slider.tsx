@@ -3,6 +3,7 @@
 import { SetStateAction, useState } from "react";
 import Image from "next/image";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { GalleryProps } from "@/_types/wordpress-types";
@@ -42,8 +43,8 @@ const GallerySlider = ({ cssClasses, desktop, data }: Props) => {
           spaceBetween={40}
           loop
           navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".gallery-next",
+            prevEl: ".gallery-prev",
           }}
         >
           {data.length > 0 &&
@@ -59,40 +60,16 @@ const GallerySlider = ({ cssClasses, desktop, data }: Props) => {
               </SwiperSlide>
             ))}
           <button
-            className="swiper-button-prev absolute top-[43%] z-10 left-[40px] cursor-pointer grid place-items-center rounded-full bg-white/[90%] w-[50px] h-[50px] hover:bg-white ease-in-out duration-300"
+            className="gallery-prev absolute top-1/2 -translate-y-1/2 z-10 left-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue desktop:hover:cursor-pointer desktop:hover:bg-lightBlue"
             aria-label="Show previous image"
           >
-            <svg
-              width="12"
-              height="21"
-              viewBox="0 0 12 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="-ml-0.5"
-            >
-              <path
-                d="M10.1125 20.5L0.112549 10.5L10.1125 0.5L11.8875 2.275L3.66255 10.5L11.8875 18.725L10.1125 20.5Z"
-                fill="#4079B7"
-              />
-            </svg>
+            <ChevronLeft color="#FFFFFF" />
           </button>
           <button
-            className="swiper-button-next absolute top-[43%] z-10 right-[40px] cursor-pointer grid place-items-center rounded-full bg-white/[90%] w-[50px] h-[50px] hover:bg-white ease-in-out duration-300"
+            className="gallery-next absolute top-1/2 -translate-y-1/2 z-10 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue desktop:hover:cursor-pointer desktop:hover:bg-lightBlue"
             aria-label="Show next image"
           >
-            <svg
-              width="12"
-              height="21"
-              viewBox="0 0 12 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="-mr-0.5"
-            >
-              <path
-                d="M1.88751 0.499999L11.8875 10.5L1.88751 20.5L0.112512 18.725L8.33751 10.5L0.112513 2.275L1.88751 0.499999Z"
-                fill="#4079B7"
-              />
-            </svg>
+            <ChevronRight color="#FFFFFF" />
           </button>
         </Swiper>
       </>

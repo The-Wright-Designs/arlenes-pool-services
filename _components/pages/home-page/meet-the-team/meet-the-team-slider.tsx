@@ -25,14 +25,14 @@ const MeetTheTeamSlider = ({ cssClasses, data }: Props) => {
       <button
         type="button"
         aria-label="Previous team member"
-        className={classNames(arrowClasses, "team-prev left-2")}
+        className={classNames(arrowClasses, "team-prev left-4")}
       >
         <ChevronLeft color="#FFFFFF" />
       </button>
       <button
         type="button"
         aria-label="Next team member"
-        className={classNames(arrowClasses, "team-next right-2")}
+        className={classNames(arrowClasses, "team-next right-4")}
       >
         <ChevronRight color="#FFFFFF" />
       </button>
